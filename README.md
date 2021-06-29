@@ -59,7 +59,19 @@ $ source ~/catkin_ws/devel/setup.bash
 $ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 ```
 
+Operate TurtleBot3 in a new terminal tab:
+```
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+```
+
 ### SLAM Simulation
+
+Launch Simulation World:
+```
+$ export TURTLEBOT3_MODEL=burger
+$ source ~/catkin_ws/devel/setup.bash
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+```
 
 In a new terminal tab, run the SLAM node. Gmapping SLAM method is used by default:
 ```
@@ -72,5 +84,17 @@ Open a new terminal and run the teleoperation node from the Remote PC:
 $ export TURTLEBOT3_MODEL=burger
 $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 ```
+
+As can be seen, the map is created successfully:
+
+![TurtleBot3Mapping](https://user-images.githubusercontent.com/52850659/123856396-b8aa7f00-d929-11eb-97b4-285dae518367.png)
+
+Using the following command, the map is saved in .pgm extension:
+```
+rosrun map_server map_saver -f ~/map
+```
+
+![SLAM map](https://user-images.githubusercontent.com/52850659/123856558-e98ab400-d929-11eb-9d8e-d7b36e3f3f8e.png)
+
 
 
